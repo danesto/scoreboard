@@ -1,0 +1,136 @@
+/* FONT SCOREBOARD */
+@font-face {
+    font-family: score-font;
+    src: url(font/Ozone-xRRO.ttf);
+  }
+
+body{
+    background: rgb(8, 8, 8);
+}
+
+.container{
+    padding-top: 20px !important;
+}
+
+.teams{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team{
+    width: 200px;
+    min-width: 200px;
+    background: black;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.labels{
+    margin-top:10px;
+}
+
+.label{
+    text-align: center;
+    border-radius: 0;
+    font-family: score-font;
+    font-size: 40px;
+    color: white;
+    text-transform: uppercase;
+    /* background: black; */
+}
+
+.score{
+    border-radius: 10px;
+    font-size: 100px;
+    text-transform: uppercase;
+    font-family: score-font;
+    color: red;
+    background: black;
+}
+
+.separator{
+   width: 10px;
+}
+
+.timer{
+    text-align: center;
+    background: black;
+    font-size: 50px;
+    color: seagreen;
+    width: 100px;
+    margin:0 auto;
+    min-width: 200px;
+    font-family: score-font;
+    border: 5px solid;
+    border-radius: 10px;
+}
+
+.home-team-label{
+    font-size: 23px;
+    color: white;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.home-team-goals{
+    width:50px;
+}
+
+.away-team-label{
+    font-size: 23px;
+    color: white;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.away-team-goals{
+   width: 50px !important;
+}
+
+.home-team-scorers{
+    font-size: 20px;
+    font-family: score-font;
+    width: 200px;
+    min-width: 200px;
+    color: white;
+}
+
+.away-team-scorers{
+    font-size: 20px;
+    font-family: score-font;
+    width: 200px;
+    min-width: 200px;
+    color: white;
+}
+/* HELPERS */
+.mt-100{
+    margin-top: 100px;
+}
+
+.mt-50{
+    margin-top: 50px;
+}
+
+.mt-200{
+    margin-top: 200px;
+}
+
+.mt-10{
+    margin-top: 10px;
+}
+
+.mx-auto{
+    margin:0 auto;
+}
+
+td
+{
+    padding:5px 15px;
+}
+
+.input{
+    padding: 5px;
+    border-radius: 2px;
+    border: none;
+    outline-color: springgreen;
+}

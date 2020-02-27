@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semafor</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="container text-center">
+        <div class="row">
+            <div class="timer" id="timer">00:00</div>
+        </div>
+        <div class="row teams">
+            <div class="team text-center">
+                <div class="text-center">
+                    <h1 class="label">domacin</h1>
+                </div>
+                <div class="text-center">                   
+                    <h1 class="home-team-score score text-center" id="home-team-score">0</h1>
+                </div>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="team text-center">
+                <div class="text-center">
+                    <h1 class="label">gost</h1>
+                </div>
+                <div class="text-center">
+                    <h1 class="away-team-score score text-center" id="away-team-score">0</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row scorers mt-10 teams">
+            <div class="home-team-scorers" id="home-team-scorers">
+                   
+            </div>
+
+            <div class="away-team-scorers" id="away-team-scorers">
+                    
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-200">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <button type="button" class="btn" id="start-game">Započni utakmicu</button>            
+                <button type="button" class="btn" id="second-half">II poluvreme</button>            
+            </div>
+        </div>
+        <div class="row mt-10">
+            <div class="col-md-12 text-center">
+                <table class="mx-auto">
+                    <tr>
+                        <td>
+                            <label for="home-team-goals" class="home-team-label">Domacin golovi</label>
+                        </td>  
+                        <td>
+                            <label for="home-team-scorers-input" class="home-team-label">Domacin strelac i minut</label>
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="goal text-center">
+                                <input type="text" class="input home-team-goals" name="home-team-goals" id="home-team-goals" value="0">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="goal text-center">
+                                <input type="text" class="input home-team-scorers-input" name="home-team-goals" id="home-team-scorers-input">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="away-team-goals" class="away-team-label">Gost golovi</label>
+                        </td>
+                        <td>
+                            <label for="away-team-scorers-input" class="away-team-label">Gost strelac i minut</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="goal text-center">
+                                <input type="text" class="input away-team-goals" name="away-team-goals" id="away-team-goals" value="0">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="goal text-center">
+                                <input type="text" class="input away-team-scorers-input" name="away-team-goals" id="away-team-scorers-input">
+                            </div>
+                        </td>   
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="scoreboard.js"></script>
+</body>
+</html>
