@@ -1,4 +1,5 @@
 # scoreboard system for soccer games
+## Also avaliable in Desktop FROM (Electron.js)
 v2.0
 
 Scoreboard system built in JS for controling local LED PANEL at soccer stadium.
