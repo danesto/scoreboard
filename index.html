@@ -4,103 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Semafor</title>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> 
-    <link rel="stylesheet" href="app.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="public/css/main.css">
 </head>
 <body>
-    <div class="container text-center">
-        <div class="row">
-            <div class="timer" id="timer">00:00</div>
+    <div class="container">
+    <div class="screens">
+        <div class="screen1">
+            <table class="teams">
+                <tbody id="screen-one">
+                    <tr><td class="teams-h">STARTNE POSTAVE</td></tr>
+                    <tr>
+                        <td class="team-one-lineups"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="screen-controls">
+                <button class="activate-screen-one mt-2" id="switchMainScreen">Prebaci na glavni ekran</button>
+                <input type="color" class="screen-one-bg" id="screen-one-bg">
+            </div>
+            <div class="image-upload">
+                <form runat="server">
+                    <label for="imgInp">Dodaj sliku: </label> <br>
+                    <input type='file' id="imgInp" />
+                </form>
+            </div>
+               <!-- CONTROLS -->
+    <table>
+        <tr>
+            <td>
+                <h2>Startne postave: <br></h2>
+                <textarea name="team-one-players" id="team-one-players" cols="40" rows="12"></textarea> <br>
+                <textarea name="team-two-players" id="team-two-players" cols="40" rows="10"></textarea> <br>
+                <button id="team-one-add">Dodaj timove</button>
+
+                <button id="drop-teams">Izbrisi postave</button>
+            </td>
+        </tr>
+    </table>
         </div>
-        <div class="row teams">
-            <div class="team text-center">
-                <div class="text-center">
-                    <h1 class="label">domacin</h1>
-                </div>
-                <div class="text-center">                   
-                    <h1 class="home-team-score score text-center" id="home-team-score">0</h1>
-                </div>
+      
+        <div class="screen2">
+            <div class="time">
+                <span id="timer">00:00</span>
             </div>
-
-            <div class="separator"></div>
-
-            <div class="team text-center">
-                <div class="text-center">
-                    <h1 class="label">gost</h1>
+                <div id="screen-two">
+                   <div class="team-one">
+                        <p class="team-one-name">Domacin</p>
+                        <p class="team-one-score" id="team-one-score">0</p>
+                        <p class="team-one-scorers" id="team-one-scorers"></p>
+                   </div>
+                   <div class="team-two">
+                        <p class="team-two-name">Gost</p>
+                        <p class="team-two-score" id="team-two-score">0</p>
+                        <p class="team-two-scorers" id="team-two-scorers"></p>
+                   </div>
                 </div>
-                <div class="text-center">
-                    <h1 class="away-team-score score text-center" id="away-team-score">0</h1>
+                <div class="screen-controls">
+                    <button class="activate-screen-two">Prebaci na glavni Ekran</button>
+                    <input type="color" class="screen-two-bg" id="screen-two-bg">
                 </div>
-            </div>
+                <div class="team-commands">
+                    <p>Domaćin naziv tima</p>
+                    <input type="text" id="home-team-name">
+                    <p>Domacin golovi</p>
+                    <input type="number" id="home-team-goals">
+                    <p>Domacin strelac i minut</p>
+                    <input type="text" id="home-team-scorers-input">
+                </div>
+                    <!-- ////////////////// -->
+                <div class="team-commands">
+                        <p>Gost naziv tima</p>
+                        <input type="text" id="away-team-name">
+                        <p>Gost golovi</p>
+                        <input type="number" id="away-team-goals">
+                        <p>Gost strelac i minut</p>
+                        <input type="text" id="away-team-scorers-input">
+                </div>
         </div>
+    </div>   
 
-        <div class="row scorers mt-10 teams">
-            <div class="home-team-scorers" id="home-team-scorers">
-                   
-            </div>
-
-            <div class="away-team-scorers" id="away-team-scorers">
-                    
-            </div>
+    <div class="goal">
+        <div class="main-commands">
+            <button id="start-game"><i class="far fa-futbol"></i> Započni utakmicu</button>
+            <button id="second-half"><i class="fas fa-stopwatch-20"></i> Drugo poluvreme</button>
+            <button id="goal">GOL</button>
+            <button id="reset-all"><i class="fa fa-times" aria-hidden="true"></i> Poništi sve</button>
         </div>
     </div>
+</div>
+<div id="basicUsage"></div>
 
-    <div class="container mt-200">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <button type="button" class="btn" id="start-game">Započni utakmicu</button>            
-                <button type="button" class="btn" id="second-half">II poluvreme</button>            
-            </div>
-        </div>
-        <div class="row mt-10">
-            <div class="col-md-12 text-center">
-                <table class="mx-auto">
-                    <tr>
-                        <td>
-                            <label for="home-team-goals" class="home-team-label">Domacin golovi</label>
-                        </td>  
-                        <td>
-                            <label for="home-team-scorers-input" class="home-team-label">Domacin strelac i minut</label>
-                        </td>   
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="goal text-center">
-                                <input type="text" class="input home-team-goals" name="home-team-goals" id="home-team-goals" value="0">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="goal text-center">
-                                <input type="text" class="input home-team-scorers-input" name="home-team-goals" id="home-team-scorers-input">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="away-team-goals" class="away-team-label">Gost golovi</label>
-                        </td>
-                        <td>
-                            <label for="away-team-scorers-input" class="away-team-label">Gost strelac i minut</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="goal text-center">
-                                <input type="text" class="input away-team-goals" name="away-team-goals" id="away-team-goals" value="0">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="goal text-center">
-                                <input type="text" class="input away-team-scorers-input" name="away-team-goals" id="away-team-scorers-input">
-                            </div>
-                        </td>   
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-    <script src="scoreboard.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="app.js"></script>
+<script src="image-preview.js"></script>
+<script src="scoreboard.js"></script>
+<script src="timer.js"></script>
 </body>
+<!-- <script src="timer.js"></script> -->
 </html>
